@@ -259,4 +259,16 @@ public final class LocalDataManager {
             Log.e(TAG, "Failed while writing to SharedPreferences", e);
         }
     }
+
+    /**
+     * Clears all cached tokens for everyone
+     * @param context Required: The host application {@link Context}.
+     */
+    public static void clearCacheAll(final Context context) {
+        try {
+            context.getSharedPreferences(ClientConstants.APP_LOCAL_CACHE, Context.MODE_PRIVATE).edit().clear().apply();
+        } catch (Exception e) {
+            Log.e(TAG, "Failed while writing to SharedPreferences", e);
+        }
+    }
 }
