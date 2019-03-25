@@ -775,6 +775,7 @@ abstract class NotificationClientBase {
             return false;
         }
         launchIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        launchIntent.putExtra(NotificationClient.INTENT_FROM_PINTPOINT, true);
         launchIntent.setPackage(null);
         pinpointContext.getApplicationContext().startActivity(launchIntent);
         return true;
@@ -790,6 +791,7 @@ abstract class NotificationClientBase {
 
         final Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(validatedUrl));
+        intent.putExtra(NotificationClient.INTENT_FROM_PINTPOINT, true);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (intent.resolveActivity(pinpointContext.getApplicationContext().getPackageManager()) != null) {
             pinpointContext.getApplicationContext().startActivity(intent);

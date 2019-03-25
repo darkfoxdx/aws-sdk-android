@@ -29,6 +29,10 @@ import java.util.Map;
  */
 public class NotificationClient {
     /**
+     *
+     */
+    public static final String INTENT_FROM_PINTPOINT = "fromPinpoint";
+    /**
      * Intent Key for GCM bundle.
      */
     public static final String INTENT_SNS_NOTIFICATION_FROM = "from";
