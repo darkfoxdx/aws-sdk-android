@@ -32,6 +32,7 @@ public class NotificationClient {
      *
      */
     public static final String INTENT_FROM_PINTPOINT = "fromPinpoint";
+    public static final String INTENT_BUNDLE = "bundle";
     /**
      * Intent Key for GCM bundle.
      */
