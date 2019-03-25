@@ -28,7 +28,7 @@ dependencies {
 // creates a symbolic link to android-23.jar.
 task myTask(type:Exec) {
     workingDir '.'
-    commandLine 'sh', '-c', "rm -rf libs && mkdir libs && ln -s $System.env.ANDROID_HOME/platforms/android-23/android.jar libs/android-23.jar"
+    commandLine 'cmd', '-c', "rm -rf libs && mkdir libs && ln -s $System.env.ANDROID_HOME/platforms/android-23/android.jar libs/android-23.jar"
 }
 
 compileJava.dependsOn(myTask)
