@@ -512,9 +512,9 @@ abstract class NotificationClientBase {
             // and if after 23, we will convert the app icon to grey scale when setting the small icon so it will be
             // rendered in a way that looks reasonable.
 
-            if (largeIconBitmap != null) {
-                setLargeIconMethod.invoke(notificationBuilder, largeIconBitmap);
-            }
+//            if (largeIconBitmap != null) {
+//                setLargeIconMethod.invoke(notificationBuilder, largeIconBitmap);
+//            }
 
             // If we are able to use a bitmap to set the small icon.
             if (iconClass != null && android.os.Build.VERSION.SDK_INT >= ANDROID_NOUGAT) {
