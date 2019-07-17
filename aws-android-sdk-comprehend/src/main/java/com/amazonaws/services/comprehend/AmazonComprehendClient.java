@@ -99,16 +99,27 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Constructs a new client to invoke service methods on AmazonComprehend
      * using the specified AWS account credentials.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonComprehendClient client = new AmazonComprehendClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -125,16 +136,27 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * using the specified AWS account credentials and client configuration
      * options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonComprehendClient client = new AmazonComprehendClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -154,16 +176,27 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Constructs a new client to invoke service methods on AmazonComprehend
      * using the specified AWS account credentials provider.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonComprehendClient client = new AmazonComprehendClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -181,16 +214,27 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * using the specified AWS account credentials provider and client
      * configuration options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonComprehendClient client = new AmazonComprehendClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -239,6 +283,28 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * using the specified AWS account credentials provider, client
      * configuration options and request metric collector.
      * <p>
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonComprehendClient client = new AmazonComprehendClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
+     * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
      *
@@ -262,16 +328,20 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
         jsonErrorUnmarshallers.add(new BatchSizeLimitExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InternalServerExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidFilterExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new JobNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new KmsKeyValidationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceLimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceUnavailableExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TextSizeLimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TooManyTagKeysExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new UnsupportedLanguageExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
 
@@ -297,7 +367,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Determines the dominant language of the input text for a batch of
      * documents. For a list of languages that Amazon Comprehend can detect, see
      * <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -581,9 +651,11 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -637,9 +709,11 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1237,7 +1311,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * <p>
      * Determines the dominant language of the input text. For a list of
      * languages that Amazon Comprehend can detect, see <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -1863,6 +1937,57 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Lists all tags associated with a given Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return listTagsForResourceResult The response from the
+     *         ListTagsForResource service method, as returned by Amazon
+     *         Comprehend.
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller()
+                        .marshall(listTagsForResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListTagsForResourceResult, JsonUnmarshallerContext> unmarshaller = new ListTagsForResourceResultJsonUnmarshaller();
+            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the topic detection jobs that you have submitted.
      * </p>
      * 
@@ -1927,6 +2052,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1979,6 +2105,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Amazon Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2039,6 +2166,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2091,6 +2219,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2143,6 +2272,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2196,6 +2326,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2613,6 +2744,109 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             }
             Unmarshaller<StopTrainingEntityRecognizerResult, JsonUnmarshallerContext> unmarshaller = new StopTrainingEntityRecognizerResultJsonUnmarshaller();
             JsonResponseHandler<StopTrainingEntityRecognizerResult> responseHandler = new JsonResponseHandler<StopTrainingEntityRecognizerResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a specific tag with an Amazon Comprehend resource. A tag is a
+     * key-value pair that adds as a metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return tagResourceResult The response from the TagResource service
+     *         method, as returned by Amazon Comprehend.
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws TooManyTagsException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestMarshaller().marshall(tagResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<TagResourceResult, JsonUnmarshallerContext> unmarshaller = new TagResourceResultJsonUnmarshaller();
+            JsonResponseHandler<TagResourceResult> responseHandler = new JsonResponseHandler<TagResourceResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return untagResourceResult The response from the UntagResource service
+     *         method, as returned by Amazon Comprehend.
+     * @throws TooManyTagKeysException
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestMarshaller().marshall(untagResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UntagResourceResult, JsonUnmarshallerContext> unmarshaller = new UntagResourceResultJsonUnmarshaller();
+            JsonResponseHandler<UntagResourceResult> responseHandler = new JsonResponseHandler<UntagResourceResult>(
                     unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);

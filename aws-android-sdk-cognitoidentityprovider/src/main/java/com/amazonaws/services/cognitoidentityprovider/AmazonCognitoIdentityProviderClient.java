@@ -109,16 +109,28 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * AmazonCognitoIdentityProvider using the specified AWS account
      * credentials.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonCognitoIdentityProviderClient client = new AmazonCognitoIdentityProviderClient(
+     *                 AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -135,16 +147,28 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * AmazonCognitoIdentityProvider using the specified AWS account credentials
      * and client configuration options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonCognitoIdentityProviderClient client = new AmazonCognitoIdentityProviderClient(
+     *                 AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -165,16 +189,28 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * AmazonCognitoIdentityProvider using the specified AWS account credentials
      * provider.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonCognitoIdentityProviderClient client = new AmazonCognitoIdentityProviderClient(
+     *                 AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -192,16 +228,28 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * AmazonCognitoIdentityProvider using the specified AWS account credentials
      * provider and client configuration options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonCognitoIdentityProviderClient client = new AmazonCognitoIdentityProviderClient(
+     *                 AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -249,6 +297,29 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * Constructs a new client to invoke service methods on
      * AmazonCognitoIdentityProvider using the specified AWS account credentials
      * provider, client configuration options and request metric collector.
+     * <p>
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AmazonCognitoIdentityProviderClient client = new AmazonCognitoIdentityProviderClient(
+     *                 AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -1645,6 +1716,57 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
     }
 
     /**
+     * @param adminSetUserPasswordRequest
+     * @return adminSetUserPasswordResult The response from the
+     *         AdminSetUserPassword service method, as returned by Amazon
+     *         Cognito Your User Pool.
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws UserNotFoundException
+     * @throws InternalErrorException
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterException
+     * @throws InvalidPasswordException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Cognito Your User Pool indicating either a problem with the
+     *             data in the request, or a server side issue.
+     */
+    public AdminSetUserPasswordResult adminSetUserPassword(
+            AdminSetUserPasswordRequest adminSetUserPasswordRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(adminSetUserPasswordRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminSetUserPasswordRequest> request = null;
+        Response<AdminSetUserPasswordResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminSetUserPasswordRequestMarshaller()
+                        .marshall(adminSetUserPasswordRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<AdminSetUserPasswordResult, JsonUnmarshallerContext> unmarshaller = new AdminSetUserPasswordResultJsonUnmarshaller();
+            JsonResponseHandler<AdminSetUserPasswordResult> responseHandler = new JsonResponseHandler<AdminSetUserPasswordResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
@@ -1854,6 +1976,9 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * @throws NotAuthorizedException
      * @throws UserNotFoundException
      * @throws InternalErrorException
+     * @throws InvalidSmsRoleAccessPolicyException
+     * @throws InvalidEmailRoleAccessPolicyException
+     * @throws InvalidSmsRoleTrustRelationshipException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
      *             handle the response. For example if a network connection is
@@ -4350,6 +4475,67 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
 
     /**
      * <p>
+     * Lists the tags that are assigned to an Amazon Cognito user pool.
+     * </p>
+     * <p>
+     * A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or
+     * other criteria.
+     * </p>
+     * <p>
+     * You can use this action up to 10 times per second, per account.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return listTagsForResourceResult The response from the
+     *         ListTagsForResource service method, as returned by Amazon Cognito
+     *         Your User Pool.
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterException
+     * @throws InternalErrorException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Cognito Your User Pool indicating either a problem with the
+     *             data in the request, or a server side issue.
+     */
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller()
+                        .marshall(listTagsForResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListTagsForResourceResult, JsonUnmarshallerContext> unmarshaller = new ListTagsForResourceResultJsonUnmarshaller();
+            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -5222,6 +5408,128 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
 
     /**
      * <p>
+     * Assigns a set of tags to an Amazon Cognito user pool. A tag is a label
+     * that you can use to categorize and manage user pools in different ways,
+     * such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a key and value, both of which you define. A key is
+     * a general category for more specific values. For example, if you have two
+     * versions of a user pool, one for testing and another for production, you
+     * might assign an <code>Environment</code> tag key to both user pools. The
+     * value of this key might be <code>Test</code> for one user pool and
+     * <code>Production</code> for the other.
+     * </p>
+     * <p>
+     * Tags are useful for cost tracking and access control. You can activate
+     * your tags so that they appear on the Billing and Cost Management console,
+     * where you can track the costs associated with your user pools. In an IAM
+     * policy, you can constrain permissions for user pools based on specific
+     * tags or tag values.
+     * </p>
+     * <p>
+     * You can use this action up to 5 times per second, per account. A user
+     * pool can have as many as 50 tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return tagResourceResult The response from the TagResource service
+     *         method, as returned by Amazon Cognito Your User Pool.
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterException
+     * @throws InternalErrorException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Cognito Your User Pool indicating either a problem with the
+     *             data in the request, or a server side issue.
+     */
+    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestMarshaller().marshall(tagResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<TagResourceResult, JsonUnmarshallerContext> unmarshaller = new TagResourceResultJsonUnmarshaller();
+            JsonResponseHandler<TagResourceResult> responseHandler = new JsonResponseHandler<TagResourceResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from an Amazon Cognito user pool. You can use
+     * this action up to 5 times per second, per account
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return untagResourceResult The response from the UntagResource service
+     *         method, as returned by Amazon Cognito Your User Pool.
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterException
+     * @throws InternalErrorException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Cognito Your User Pool indicating either a problem with the
+     *             data in the request, or a server side issue.
+     */
+    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestMarshaller().marshall(untagResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UntagResourceResult, JsonUnmarshallerContext> unmarshaller = new UntagResourceResultJsonUnmarshaller();
+            JsonResponseHandler<UntagResourceResult> responseHandler = new JsonResponseHandler<UntagResourceResult>(
+                    unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Provides the feedback for an authentication event whether it was from a
      * valid user or not. This feedback is used for improving the risk
      * evaluation decision for the user pool as part of Amazon Cognito advanced
@@ -5725,7 +6033,7 @@ public class AmazonCognitoIdentityProviderClient extends AmazonWebServiceClient 
      * <p>
      * For more information about adding a custom domain to your user pool, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
      * >Using Your Own Domain for the Hosted UI</a>.
      * </p>
      * 

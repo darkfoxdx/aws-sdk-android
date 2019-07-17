@@ -1,5 +1,211 @@
 # Change Log - AWS SDK for Android
 
+## [Release 2.13.7](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.7)
+
+### New Features
+
+* **Amazon SageMaker**
+  * Amazon SageMaker provides every developer and data scientist with the ability to build, train, and deploy machine learning models quickly. Amazon SageMaker is a fully-managed service that covers the entire machine learning workflow to label and prepare your data, choose an algorithm, train the model, tune and optimize it for deployment, make predictions, and take action. Your models get to production faster with much less effort and lower cost. See [Amazon SageMaker Documentation](https://aws.amazon.com/sagemaker/) for more details.
+  
+* **Amazon Textract**
+  * Amazon Textract is a service that automatically extracts text and data from scanned documents. Amazon Textract goes beyond simple optical character recognition (OCR) to also identify the contents of fields in forms and information stored in tables. See [Amazon Textract Documentation](https://aws.amazon.com/textract/) for more details.
+
+### Bug Fixes
+
+* **Amazon S3**
+  * Fix a bug where the `TransferNetworkLossHandler` crashes while pausing the on-going transfers when network connectivity goes offline. See [issue #777](https://github.com/aws-amplify/aws-sdk-android/issues/777) for details.
+
+* **Amazon Pinpoint**
+  * Added limits to batch submit events. A maximum of 100 events per batch as specified by the service. See [issue #977](https://github.com/aws-amplify/aws-sdk-android/issues/977) for details.
+  
+### Misc. Updates
+
+* Model updates for the following services
+  * Amazon AutoScaling
+  * Amazon Cognito Identity Pools
+  * Amazon Cognito UserPools
+  * Amazon Comprehend
+  * AWS IoT
+  * Amazon Key Management Service (KMS)
+  * Amazon Kinesis Firehose
+  * Amazon Kinesis Video
+  * AWS Lambda
+  * Amazon Lex
+  * Amazon Machine Learning
+  * Amazon Polly
+  * Amazon Security Token Service (STS)
+  * Amazon Simple Email Service (SES)
+  * Amazon Transcribe
+  * Amazon Translate
+
+## [Release 2.13.6](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.6)
+
+### New Features
+
+* **AWS Core Runtime**
+  * Add `AWSConfiguration(JSONObject)` constructor to construct a `AWSConfiguration` object from the configuration passed via a `JSONObject`.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * Amazon Transcribe
+
+## [Release 2.13.5](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.5)
+
+### Bug Fixes
+
+* **Amazon S3**
+  * Fix a bug where the `TransferListener` is not triggered when the preferred network type is not available. See [issue #958](https://github.com/aws-amplify/aws-sdk-android/issues/958) for details.
+  
+* **AWS Core Runtime**
+  * Fixed a bug where generating RSA keys for encryption of the credentials failed due to `setKeySize(int)` method not available in Android API level 18. See [issue #964](https://github.com/aws-amplify/aws-sdk-android/issues/964) for details.
+
+* **Amazon Kinesis Video Streams**
+  * Removed trailing zeroes from encoder output that caused 0x3200000d errors when frames contained more than 3 trailing zeroes. See AnnexB sepcification.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * Amazon Comprehend
+  * Amazon Security Token Service (STS)
+  * Amazon Transcribe
+
+## [Release 2.13.4](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.4)
+
+### Bug Fixes
+
+* **AWS Mobile Client**
+  * Fix initialization NPE for Hosted UI feature. See [issue #888](https://github.com/aws-amplify/aws-sdk-android/issues/888)
+
+### Enhancements
+
+* **AWS Mobile Client**
+  * Update logic to expose network related exceptions during API calls. The network related exceptions were not surfaced previously in API calls like getUserAttributes. Only the exceptions that conclusively indicate signed-out are used to trigger SIGNED_OUT_TOKENS_INVALID variants. See [issue #679](https://github.com/aws-amplify/aws-sdk-android/issues/679)
+  * Reduced logging of unfound dependencies for the Hosted UI feature when not used.
+  * Delay usage of drop-in UI dependencies until `showSignIn()` is called.
+  
+### Misc. Updates
+
+* Model updates for the following services
+  * AWS Lambda
+
+## [Release 2.13.3](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.3)
+
+### New Features
+
+* **AWS Core Runtime**
+  * Added support for `ap-east-1` - AP (Hong Kong) region.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * Amazon Cognito Identity Provider
+  * Amazon Polly
+  * Amazon Transcribe
+
+## [Release 2.13.2](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.2)
+
+### Enhancements
+
+* **AWS IoT**
+  * AWS IoT SDK for Android now supports connecting your devices to AWS IoT Core using Persistent Sessions. Please look at [this blog](https://aws.amazon.com/about-aws/whats-new/2019/01/aws-iot-core-now-enables-customers-to-store-messages-for-disconnected-devices/) for more details.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * Amazon Comprehend
+
+### Bug Fixes
+
+* **Amazon Cognito Auth**
+  * Fixed erroneous user cancelled error when redirecting back to app. See [issue #328](https://github.com/aws-amplify/aws-sdk-android/issues/328), [issue #871](https://github.com/aws-amplify/aws-sdk-android/issues/871)
+
+* **Amazon S3**
+  * Fixed a bug where uploading a file using `AmazonS3Client.putObject(PutObjectRequest)` with `SSEAwsKeyManagementParams` fails with contentMD5 validation error. Now, the contentMd5 validation is skipped when a file is uploaded with `SSEAwsKeyManagementParams` through the `PutObjectRequest`.
+
+* **Amazon Pinpoint**
+  * Added `SocketException` to the list of client exceptions where the events submitted to Amazon Pinpoint will be saved in the local database. See [issue #773](https://github.com/aws-amplify/aws-sdk-android/issues/773).
+
+## [Release 2.13.1](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.1)
+
+### Enhancements
+
+* **AWS Mobile Client**
+  * Updated Google or Facebook refresh when using the drop-in UI. See [issue #809](https://github.com/aws-amplify/aws-sdk-android/issues/809), [issue #700](https://github.com/aws-amplify/aws-sdk-android/issues/700).
+
+### Bug Fixes
+
+* **Amazon S3**
+  * Fixed an issue where the transfer state is not set to `WAITING_FOR_NETWORK` when the network disconnects. See [issue #616](https://github.com/aws-amplify/aws-sdk-android/issues/616)
+  * Shorten `RepeatableFileInputStream` log tag to be within the 23 character limit imposed by android on certain API Levels. See [issue #787](https://github.com/aws-amplify/aws-sdk-android/issues/787)
+
+* **AWS Mobile Client**
+  * Fixed a bug that caused repetitive sign-in using the drop-in UI to the same provider to not federate the correct credentials. See [issue #809](https://github.com/aws-amplify/aws-sdk-android/issues/809)
+
+* **Amazon Cognito Auth**
+  * Fixed a bug that caused `isAuthenticated()` to return false after sign-in when no scopes were requested. See [issue #813](https://github.com/aws-amplify/aws-sdk-android/issues/813)
+
+* **Amazon Pinpoint**
+  * Fix a bug where the image that is part of a push notification is persisted in the subsequent notifications.
+  * Fix a bug where the events recorded and stored in the device will not be deleted when the network is not available. See [issue #773](https://github.com/aws-amplify/aws-sdk-android/issues/773). With this change, the events will be kept in the local database when there is a retryable error or device is offline. For all other exceptions during `submitEvents`, the exception is logged and the events will be removed from the local database.
+
+## [Release 2.13.0](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.13.0)
+
+### Enhancements
+
+* **AWS IoT**
+  * AWS IoT SDK for Android now supports MQTT over TLS with X.509 client certificate authentication on port 443. Previously this combination of protocol and authentication mechanism was only supported on port 8883. `connectUsingALPN()` method allows developers to connect to AWS IoT using client certificate authentication on port 443. Please look at [this blog](https://aws.amazon.com/blogs/iot/mqtt-with-tls-client-authentication-on-port-443-why-it-is-useful-and-how-it-works/) for more details.
+  * **Breaking Change:** Please note that the type of aws-android-sdk-iot artifact is being changed from a`jar` to an `aar`. Also note that the `aar` artifacts needs to be explicitly specified in the dependency as `implementation ("com.amazonaws:aws-android-sdk-iot:2.12.+@aar") { transitive =true }` on some of the older versions of gradle.
+
+### Bug Fixes
+
+* **AWS Mobile Client**
+  * Fixed a bug when initializing drop-in UI that caused the Facebook, Google, or Userpools provider to not be instantiated.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * AWS IoT
+  * Amazon Transcribe
+
+## [Release 2.12.7](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.12.7)
+
+### Enhancements
+
+* **AWS Mobile Client**
+  * Updated `federatedSignIn()` method to contact the service immediately to validate tokens. The `signIn()` method will also attempt to federated immediately when applicable. See [issue #800](https://github.com/aws-amplify/aws-sdk-android/issues/800)
+  * Fix Google or Facebook refresh when using the drop-in UI. See [issue #809](https://github.com/aws-amplify/aws-sdk-android/issues/809), [issue #700](https://github.com/aws-amplify/aws-sdk-android/issues/700).
+  * Annotated methods that are designed to be called from UI thread or from a background thread with @AnyThread and @WorkerThread, respectively.
+
+### Bug Fixes
+
+* **AWS Core**
+  * Fixed support for EU (Stockholm) region - `eu-north-1` by adding to `RegionDefaults`. See [issue #797](https://github.com/aws-amplify/aws-sdk-android/issues/797)
+  * Fixed a bug where a stringSet stored in `SharedPreferences` cannot be migrated to the `AWSKeyValueStore`.
+  * Propagate the exception when loading/creating the encryption key fails while trying to persist data through `AWSKeyValueStore`.
+
+### Misc. Updates
+
+* Model updates for the following services
+  * AWS Autoscaling
+  * Amazon Cognito Identity
+  * Amazon Cognito Identity Provider
+  * Amazon Comprehend
+  * Amazon Kinesis Video
+
+* **AWS IoT**
+  * Fixed the timestamp used for signing requests to AWS IoT by accounting for the offset specified in `SDKGlobalConfiguration`. See [issue #814](https://github.com/aws-amplify/aws-sdk-android/issues/814)
+
+* **Amazon Lex**
+  * Set user-specified `RequestAttributes` for the `PostContentRequest` sent to Amazon Lex bots. See [issue #801](https://github.com/aws-amplify/aws-sdk-android/issues/801)
+
+## [Release 2.12.6](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.12.6)
+
+### Misc. Updates
+
+* **AWS IoT**
+  * Fixed an internal SDK usage metrics tracker.
+
 ## [Release 2.12.5](https://github.com/aws/aws-sdk-android/releases/tag/release_v2.12.5)
 
 ### New Features

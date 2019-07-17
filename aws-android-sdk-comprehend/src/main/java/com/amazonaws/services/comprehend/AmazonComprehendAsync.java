@@ -37,7 +37,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Determines the dominant language of the input text for a batch of
      * documents. For a list of languages that Amazon Comprehend can detect, see
      * <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -66,7 +66,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Determines the dominant language of the input text for a batch of
      * documents. For a list of languages that Amazon Comprehend can detect, see
      * <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -351,9 +351,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -387,9 +389,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -417,9 +421,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -450,9 +456,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws ResourceInUseException
+     * @throws TooManyTagsException
      * @throws TooManyRequestsException
      * @throws ResourceLimitExceededException
      * @throws UnsupportedLanguageException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1087,7 +1095,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * <p>
      * Determines the dominant language of the input text. For a list of
      * languages that Amazon Comprehend can detect, see <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -1114,7 +1122,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * <p>
      * Determines the dominant language of the input text. For a list of
      * languages that Amazon Comprehend can detect, see <a href=
-     * "http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html"
      * >Amazon Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -1766,6 +1774,59 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Lists all tags associated with a given Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by Amazon
+     *         Comprehend.
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest) throws AmazonServiceException,
+            AmazonClientException;
+
+    /**
+     * <p>
+     * Lists all tags associated with a given Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *            life-cycle of the request. Users could provide the
+     *            implementation of the four callback methods in this interface
+     *            to process the operation result or handle the exception.
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by Amazon
+     *         Comprehend.
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest,
+            AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gets a list of the topic detection jobs that you have submitted.
      * </p>
      * 
@@ -1833,6 +1894,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1864,6 +1926,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1890,6 +1953,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Amazon Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1919,6 +1983,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Amazon Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1953,6 +2018,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1990,6 +2056,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2016,6 +2083,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2045,6 +2113,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2071,6 +2140,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2100,6 +2170,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2127,6 +2198,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2157,6 +2229,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      *         Comprehend.
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
+     * @throws KmsKeyValidationException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -2651,6 +2724,118 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     Future<StopTrainingEntityRecognizerResult> stopTrainingEntityRecognizerAsync(
             StopTrainingEntityRecognizerRequest stopTrainingEntityRecognizerRequest,
             AsyncHandler<StopTrainingEntityRecognizerRequest, StopTrainingEntityRecognizerResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Associates a specific tag with an Amazon Comprehend resource. A tag is a
+     * key-value pair that adds as a metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future object containing the response from the TagResource
+     *         service method, as returned by Amazon Comprehend.
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws TooManyTagsException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Associates a specific tag with an Amazon Comprehend resource. A tag is a
+     * key-value pair that adds as a metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *            life-cycle of the request. Users could provide the
+     *            implementation of the four callback methods in this interface
+     *            to process the operation result or handle the exception.
+     * @return A Java Future object containing the response from the TagResource
+     *         service method, as returned by Amazon Comprehend.
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws TooManyTagsException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future object containing the response from the
+     *         UntagResource service method, as returned by Amazon Comprehend.
+     * @throws TooManyTagKeysException
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *            life-cycle of the request. Users could provide the
+     *            implementation of the four callback methods in this interface
+     *            to process the operation result or handle the exception.
+     * @return A Java Future object containing the response from the
+     *         UntagResource service method, as returned by Amazon Comprehend.
+     * @throws TooManyTagKeysException
+     * @throws InvalidRequestException
+     * @throws ConcurrentModificationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException;
 
 }

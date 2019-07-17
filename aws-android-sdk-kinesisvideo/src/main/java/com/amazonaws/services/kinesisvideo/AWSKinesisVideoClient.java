@@ -96,16 +96,27 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * Constructs a new client to invoke service methods on AWSKinesisVideo
      * using the specified AWS account credentials.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AWSKinesisVideoClient client = new AWSKinesisVideoClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -122,16 +133,27 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * using the specified AWS account credentials and client configuration
      * options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided in this constructor. Static AWSCredentials can be passed for
+     * quick testing. However, it is strongly recommended to use Amazon Cognito
+     * vended temporary credentials for use in production. This can be achieved
+     * by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AWSKinesisVideoClient client = new AWSKinesisVideoClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -151,16 +173,27 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * Constructs a new client to invoke service methods on AWSKinesisVideo
      * using the specified AWS account credentials provider.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AWSKinesisVideoClient client = new AWSKinesisVideoClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -178,16 +211,27 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * using the specified AWS account credentials provider and client
      * configuration options.
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be
-     * used to authenticate requests. Otherwise, if AWS long-term credentials
-     * are passed in, then session management will be handled automatically by
-     * the SDK. Callers are encouraged to use long-term credentials and let the
-     * SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AWSKinesisVideoClient client = new AWSKinesisVideoClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -235,6 +279,28 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * Constructs a new client to invoke service methods on AWSKinesisVideo
      * using the specified AWS account credentials provider, client
      * configuration options and request metric collector.
+     * <p>
+     * The client requests are authenticated using the {@link AWSCredentials}
+     * provided by the {@link AWSCredentialsProvider}. Static AWSCredentials can
+     * be passed for quick testing. However, it is strongly recommended to use
+     * Amazon Cognito vended temporary credentials for use in production. This
+     * can be achieved by using {@link AWSMobileClient}. Please see
+     * https://aws-amplify.github.io/docs/android/authentication for
+     * instructions on how to enable {@link AWSMobileClient}.
+     *
+     * <pre>
+     * AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback&lt;UserStateDetails&gt;() {
+     *     &#064;Override
+     *     public void onResult(final UserStateDetails details) {
+     *         AWSKinesisVideoClient client = new AWSKinesisVideoClient(AWSMobileClient.getInstance());
+     *     }
+     * 
+     *     &#064;Override
+     *     public void onError(final Exception e) {
+     *         e.printStackTrace();
+     *     }
+     * });
+     * </pre>
      * <p>
      * All service calls made using this new client object are blocking, and
      * will not return until the service call completes.
@@ -302,7 +368,7 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <p>
      * For information about how the service works, see <a href=
-     * "http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html"
+     * "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html"
      * >How it Works</a>.
      * </p>
      * <p>
@@ -319,6 +385,7 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidDeviceException
      * @throws InvalidArgumentException
      * @throws ClientLimitExceededException
+     * @throws TagsPerResourceExceededLimitException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
      *             handle the response. For example if a network connection is
@@ -385,6 +452,7 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidArgumentException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
+     * @throws VersionMismatchException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
      *             handle the response. For example if a network connection is
@@ -645,7 +713,7 @@ public class AWSKinesisVideoClient extends AmazonWebServiceClient implements AWS
      * value is optional) that you can define and assign to AWS resources. If
      * you specify a tag that already exists, the tag value is replaced with the
      * value that you specify in the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+     * "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
      * User Guide</i>.
      * </p>

@@ -74,6 +74,13 @@ class EntitiesDetectionJobPropertiesJsonUnmarshaller implements
                 entitiesDetectionJobProperties.setDataAccessRoleArn(StringJsonUnmarshaller
                         .getInstance()
                         .unmarshall(context));
+            } else if (name.equals("VolumeKmsKeyId")) {
+                entitiesDetectionJobProperties.setVolumeKmsKeyId(StringJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("VpcConfig")) {
+                entitiesDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
             } else {
                 reader.skipValue();
             }

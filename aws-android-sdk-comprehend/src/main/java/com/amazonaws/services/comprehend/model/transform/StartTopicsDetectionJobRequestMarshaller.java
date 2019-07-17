@@ -92,6 +92,16 @@ public class StartTopicsDetectionJobRequestMarshaller implements
                 jsonWriter.name("ClientRequestToken");
                 jsonWriter.value(clientRequestToken);
             }
+            if (startTopicsDetectionJobRequest.getVolumeKmsKeyId() != null) {
+                String volumeKmsKeyId = startTopicsDetectionJobRequest.getVolumeKmsKeyId();
+                jsonWriter.name("VolumeKmsKeyId");
+                jsonWriter.value(volumeKmsKeyId);
+            }
+            if (startTopicsDetectionJobRequest.getVpcConfig() != null) {
+                VpcConfig vpcConfig = startTopicsDetectionJobRequest.getVpcConfig();
+                jsonWriter.name("VpcConfig");
+                VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+            }
 
             jsonWriter.endObject();
             jsonWriter.close();

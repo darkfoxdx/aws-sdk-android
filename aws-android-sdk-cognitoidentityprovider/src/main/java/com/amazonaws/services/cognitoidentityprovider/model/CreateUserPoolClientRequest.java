@@ -86,7 +86,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      * client lacks write access to a mapped attribute, Amazon Cognito throws an
      * error when it attempts to update the attribute. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * </p>
      */
@@ -102,7 +102,9 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * A list of provider names for the identity providers that are supported on
-     * this client.
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and
+     * <code>LoginWithAmazon</code>.
      * </p>
      */
     private java.util.List<String> supportedIdentityProviders;
@@ -568,7 +570,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      * client lacks write access to a mapped attribute, Amazon Cognito throws an
      * error when it attempts to update the attribute. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * </p>
      *
@@ -583,7 +585,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *         identity provider. If your app client lacks write access to a
      *         mapped attribute, Amazon Cognito throws an error when it attempts
      *         to update the attribute. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      *         >Specifying Identity Provider Attribute Mappings for Your User
      *         Pool</a>.
      *         </p>
@@ -604,7 +606,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      * client lacks write access to a mapped attribute, Amazon Cognito throws an
      * error when it attempts to update the attribute. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * </p>
      *
@@ -620,7 +622,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *            access to a mapped attribute, Amazon Cognito throws an error
      *            when it attempts to update the attribute. For more
      *            information, see <a href=
-     *            "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *            "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      *            >Specifying Identity Provider Attribute Mappings for Your User
      *            Pool</a>.
      *            </p>
@@ -646,7 +648,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      * client lacks write access to a mapped attribute, Amazon Cognito throws an
      * error when it attempts to update the attribute. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * </p>
      * <p>
@@ -665,7 +667,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *            access to a mapped attribute, Amazon Cognito throws an error
      *            when it attempts to update the attribute. For more
      *            information, see <a href=
-     *            "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *            "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      *            >Specifying Identity Provider Attribute Mappings for Your User
      *            Pool</a>.
      *            </p>
@@ -694,7 +696,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      * client lacks write access to a mapped attribute, Amazon Cognito throws an
      * error when it attempts to update the attribute. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * </p>
      * <p>
@@ -713,7 +715,7 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *            access to a mapped attribute, Amazon Cognito throws an error
      *            when it attempts to update the attribute. For more
      *            information, see <a href=
-     *            "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *            "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
      *            >Specifying Identity Provider Attribute Mappings for Your User
      *            Pool</a>.
      *            </p>
@@ -804,12 +806,16 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * A list of provider names for the identity providers that are supported on
-     * this client.
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and
+     * <code>LoginWithAmazon</code>.
      * </p>
      *
      * @return <p>
      *         A list of provider names for the identity providers that are
-     *         supported on this client.
+     *         supported on this client. The following are supported:
+     *         <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>
+     *         and <code>LoginWithAmazon</code>.
      *         </p>
      */
     public java.util.List<String> getSupportedIdentityProviders() {
@@ -819,12 +825,16 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * A list of provider names for the identity providers that are supported on
-     * this client.
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and
+     * <code>LoginWithAmazon</code>.
      * </p>
      *
      * @param supportedIdentityProviders <p>
      *            A list of provider names for the identity providers that are
-     *            supported on this client.
+     *            supported on this client. The following are supported:
+     *            <code>COGNITO</code>, <code>Facebook</code>,
+     *            <code>Google</code> and <code>LoginWithAmazon</code>.
      *            </p>
      */
     public void setSupportedIdentityProviders(
@@ -841,7 +851,9 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * A list of provider names for the identity providers that are supported on
-     * this client.
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and
+     * <code>LoginWithAmazon</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -849,7 +861,9 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *
      * @param supportedIdentityProviders <p>
      *            A list of provider names for the identity providers that are
-     *            supported on this client.
+     *            supported on this client. The following are supported:
+     *            <code>COGNITO</code>, <code>Facebook</code>,
+     *            <code>Google</code> and <code>LoginWithAmazon</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -869,7 +883,9 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * A list of provider names for the identity providers that are supported on
-     * this client.
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and
+     * <code>LoginWithAmazon</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -877,7 +893,9 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest impleme
      *
      * @param supportedIdentityProviders <p>
      *            A list of provider names for the identity providers that are
-     *            supported on this client.
+     *            supported on this client. The following are supported:
+     *            <code>COGNITO</code>, <code>Facebook</code>,
+     *            <code>Google</code> and <code>LoginWithAmazon</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

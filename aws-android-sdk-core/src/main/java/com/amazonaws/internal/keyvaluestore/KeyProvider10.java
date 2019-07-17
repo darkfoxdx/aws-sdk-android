@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.amazonaws.internal.keyvaluestore;
 
 import android.content.Context;
@@ -41,6 +56,7 @@ class KeyProvider10 implements KeyProvider {
             try {
                 // If SharedPreferences contains the key, load it.
                 if (sharedPreferences.contains(SHARED_PREFERENCES_KEY_NAME_FOR_ENCRYPTION_KEY)) {
+                    logger.debug("Loading the encryption key from SharedPreferences");
                     final String keyInStringFormat = sharedPreferences
                             .getString(SHARED_PREFERENCES_KEY_NAME_FOR_ENCRYPTION_KEY, null);
                     return new SecretKeySpec(Base64.decode(keyInStringFormat), AES_KEY_ALGORITHM);
@@ -55,11 +71,13 @@ class KeyProvider10 implements KeyProvider {
                             .putString(SHARED_PREFERENCES_KEY_NAME_FOR_ENCRYPTION_KEY,
                                     Base64.encodeAsString(secretKey.getEncoded()))
                             .apply();
+
+                    logger.info("Generated and saved the encryption key to SharedPreferences");
                     return secretKey;
                 }
             } catch (Exception ex) {
-                logger.error("Error occurred while getting the key." + ex);
-                return null;
+                logger.error("Error in loading the key from keystore.");
+                throw new IllegalStateException(ex);
             }
         }
     }

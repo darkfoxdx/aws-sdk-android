@@ -93,6 +93,16 @@ public class StartSentimentDetectionJobRequestMarshaller implements
                 jsonWriter.name("ClientRequestToken");
                 jsonWriter.value(clientRequestToken);
             }
+            if (startSentimentDetectionJobRequest.getVolumeKmsKeyId() != null) {
+                String volumeKmsKeyId = startSentimentDetectionJobRequest.getVolumeKmsKeyId();
+                jsonWriter.name("VolumeKmsKeyId");
+                jsonWriter.value(volumeKmsKeyId);
+            }
+            if (startSentimentDetectionJobRequest.getVpcConfig() != null) {
+                VpcConfig vpcConfig = startSentimentDetectionJobRequest.getVpcConfig();
+                jsonWriter.name("VpcConfig");
+                VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+            }
 
             jsonWriter.endObject();
             jsonWriter.close();

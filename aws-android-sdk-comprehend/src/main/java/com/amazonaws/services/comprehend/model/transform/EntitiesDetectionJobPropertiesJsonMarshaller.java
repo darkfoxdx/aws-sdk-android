@@ -82,6 +82,16 @@ class EntitiesDetectionJobPropertiesJsonMarshaller {
             jsonWriter.name("DataAccessRoleArn");
             jsonWriter.value(dataAccessRoleArn);
         }
+        if (entitiesDetectionJobProperties.getVolumeKmsKeyId() != null) {
+            String volumeKmsKeyId = entitiesDetectionJobProperties.getVolumeKmsKeyId();
+            jsonWriter.name("VolumeKmsKeyId");
+            jsonWriter.value(volumeKmsKeyId);
+        }
+        if (entitiesDetectionJobProperties.getVpcConfig() != null) {
+            VpcConfig vpcConfig = entitiesDetectionJobProperties.getVpcConfig();
+            jsonWriter.name("VpcConfig");
+            VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+        }
         jsonWriter.endObject();
     }
 

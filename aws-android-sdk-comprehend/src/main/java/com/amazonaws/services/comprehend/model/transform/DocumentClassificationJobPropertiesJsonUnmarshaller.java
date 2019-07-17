@@ -73,6 +73,14 @@ class DocumentClassificationJobPropertiesJsonUnmarshaller implements
                 documentClassificationJobProperties.setDataAccessRoleArn(StringJsonUnmarshaller
                         .getInstance()
                         .unmarshall(context));
+            } else if (name.equals("VolumeKmsKeyId")) {
+                documentClassificationJobProperties.setVolumeKmsKeyId(StringJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("VpcConfig")) {
+                documentClassificationJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
             } else {
                 reader.skipValue();
             }

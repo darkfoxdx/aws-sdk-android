@@ -73,6 +73,13 @@ class DocumentClassifierPropertiesJsonMarshaller {
             DocumentClassifierInputDataConfigJsonMarshaller.getInstance().marshall(inputDataConfig,
                     jsonWriter);
         }
+        if (documentClassifierProperties.getOutputDataConfig() != null) {
+            DocumentClassifierOutputDataConfig outputDataConfig = documentClassifierProperties
+                    .getOutputDataConfig();
+            jsonWriter.name("OutputDataConfig");
+            DocumentClassifierOutputDataConfigJsonMarshaller.getInstance().marshall(
+                    outputDataConfig, jsonWriter);
+        }
         if (documentClassifierProperties.getClassifierMetadata() != null) {
             ClassifierMetadata classifierMetadata = documentClassifierProperties
                     .getClassifierMetadata();
@@ -83,6 +90,16 @@ class DocumentClassifierPropertiesJsonMarshaller {
             String dataAccessRoleArn = documentClassifierProperties.getDataAccessRoleArn();
             jsonWriter.name("DataAccessRoleArn");
             jsonWriter.value(dataAccessRoleArn);
+        }
+        if (documentClassifierProperties.getVolumeKmsKeyId() != null) {
+            String volumeKmsKeyId = documentClassifierProperties.getVolumeKmsKeyId();
+            jsonWriter.name("VolumeKmsKeyId");
+            jsonWriter.value(volumeKmsKeyId);
+        }
+        if (documentClassifierProperties.getVpcConfig() != null) {
+            VpcConfig vpcConfig = documentClassifierProperties.getVpcConfig();
+            jsonWriter.name("VpcConfig");
+            VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
         }
         jsonWriter.endObject();
     }

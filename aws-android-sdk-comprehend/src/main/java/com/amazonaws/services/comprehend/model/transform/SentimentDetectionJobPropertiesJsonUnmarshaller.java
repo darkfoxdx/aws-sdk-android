@@ -71,6 +71,14 @@ class SentimentDetectionJobPropertiesJsonUnmarshaller implements
                 sentimentDetectionJobProperties.setDataAccessRoleArn(StringJsonUnmarshaller
                         .getInstance()
                         .unmarshall(context));
+            } else if (name.equals("VolumeKmsKeyId")) {
+                sentimentDetectionJobProperties.setVolumeKmsKeyId(StringJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("VpcConfig")) {
+                sentimentDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
             } else {
                 reader.skipValue();
             }

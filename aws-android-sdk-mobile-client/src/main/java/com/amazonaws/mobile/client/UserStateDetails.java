@@ -17,13 +17,14 @@
 
 package com.amazonaws.mobile.client;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class UserStateDetails {
 
     private final UserState userState;
     private final Map<String, String> details;
+
+    private Exception exception;
 
     public UserStateDetails(UserState userState, Map<String, String> details) {
         this.userState = userState;
@@ -36,6 +37,14 @@ public class UserStateDetails {
 
     public Map<String, String> getDetails() {
         return details;
+    }
+
+    protected void setException(Exception exception) {
+        this.exception = exception;
+    }
+
+    protected Exception getException() {
+        return this.exception;
     }
 
     @Override

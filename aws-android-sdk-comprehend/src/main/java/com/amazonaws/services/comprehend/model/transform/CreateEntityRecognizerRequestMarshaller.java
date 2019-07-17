@@ -70,6 +70,17 @@ public class CreateEntityRecognizerRequestMarshaller implements
                 jsonWriter.name("DataAccessRoleArn");
                 jsonWriter.value(dataAccessRoleArn);
             }
+            if (createEntityRecognizerRequest.getTags() != null) {
+                java.util.List<Tag> tags = createEntityRecognizerRequest.getTags();
+                jsonWriter.name("Tags");
+                jsonWriter.beginArray();
+                for (Tag tagsItem : tags) {
+                    if (tagsItem != null) {
+                        TagJsonMarshaller.getInstance().marshall(tagsItem, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
+            }
             if (createEntityRecognizerRequest.getInputDataConfig() != null) {
                 EntityRecognizerInputDataConfig inputDataConfig = createEntityRecognizerRequest
                         .getInputDataConfig();
@@ -86,6 +97,16 @@ public class CreateEntityRecognizerRequestMarshaller implements
                 String languageCode = createEntityRecognizerRequest.getLanguageCode();
                 jsonWriter.name("LanguageCode");
                 jsonWriter.value(languageCode);
+            }
+            if (createEntityRecognizerRequest.getVolumeKmsKeyId() != null) {
+                String volumeKmsKeyId = createEntityRecognizerRequest.getVolumeKmsKeyId();
+                jsonWriter.name("VolumeKmsKeyId");
+                jsonWriter.value(volumeKmsKeyId);
+            }
+            if (createEntityRecognizerRequest.getVpcConfig() != null) {
+                VpcConfig vpcConfig = createEntityRecognizerRequest.getVpcConfig();
+                jsonWriter.name("VpcConfig");
+                VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
             }
 
             jsonWriter.endObject();

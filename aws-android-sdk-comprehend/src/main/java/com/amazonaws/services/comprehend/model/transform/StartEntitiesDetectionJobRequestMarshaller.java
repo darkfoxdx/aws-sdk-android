@@ -99,6 +99,16 @@ public class StartEntitiesDetectionJobRequestMarshaller implements
                 jsonWriter.name("ClientRequestToken");
                 jsonWriter.value(clientRequestToken);
             }
+            if (startEntitiesDetectionJobRequest.getVolumeKmsKeyId() != null) {
+                String volumeKmsKeyId = startEntitiesDetectionJobRequest.getVolumeKmsKeyId();
+                jsonWriter.name("VolumeKmsKeyId");
+                jsonWriter.value(volumeKmsKeyId);
+            }
+            if (startEntitiesDetectionJobRequest.getVpcConfig() != null) {
+                VpcConfig vpcConfig = startEntitiesDetectionJobRequest.getVpcConfig();
+                jsonWriter.name("VpcConfig");
+                VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+            }
 
             jsonWriter.endObject();
             jsonWriter.close();

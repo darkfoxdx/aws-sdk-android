@@ -77,6 +77,16 @@ class SentimentDetectionJobPropertiesJsonMarshaller {
             jsonWriter.name("DataAccessRoleArn");
             jsonWriter.value(dataAccessRoleArn);
         }
+        if (sentimentDetectionJobProperties.getVolumeKmsKeyId() != null) {
+            String volumeKmsKeyId = sentimentDetectionJobProperties.getVolumeKmsKeyId();
+            jsonWriter.name("VolumeKmsKeyId");
+            jsonWriter.value(volumeKmsKeyId);
+        }
+        if (sentimentDetectionJobProperties.getVpcConfig() != null) {
+            VpcConfig vpcConfig = sentimentDetectionJobProperties.getVpcConfig();
+            jsonWriter.name("VpcConfig");
+            VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+        }
         jsonWriter.endObject();
     }
 

@@ -79,6 +79,16 @@ class DocumentClassificationJobPropertiesJsonMarshaller {
             jsonWriter.name("DataAccessRoleArn");
             jsonWriter.value(dataAccessRoleArn);
         }
+        if (documentClassificationJobProperties.getVolumeKmsKeyId() != null) {
+            String volumeKmsKeyId = documentClassificationJobProperties.getVolumeKmsKeyId();
+            jsonWriter.name("VolumeKmsKeyId");
+            jsonWriter.value(volumeKmsKeyId);
+        }
+        if (documentClassificationJobProperties.getVpcConfig() != null) {
+            VpcConfig vpcConfig = documentClassificationJobProperties.getVpcConfig();
+            jsonWriter.name("VpcConfig");
+            VpcConfigJsonMarshaller.getInstance().marshall(vpcConfig, jsonWriter);
+        }
         jsonWriter.endObject();
     }
 

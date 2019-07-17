@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.amazonaws.internal.keyvaluestore;
 
 import android.content.Context;
@@ -55,14 +70,18 @@ class KeyProvider23 implements KeyProvider {
                                     .setKeySize(CIPHER_AES_GCM_NOPADDING_KEY_LENGTH_IN_BITS) // 256-bit key
                                     .setRandomizedEncryptionRequired(false)
                                     .build());
-                    return generator.generateKey();
+                    Key key = generator.generateKey();
+
+                    logger.info("Generated the encryption key using Android KeyStore.");
+                    return key;
                 } else {
                     logger.debug("AndroidKeyStore contains keyAlias " + keyAlias);
+                    logger.debug("Loading the encryption key from Android KeyStore.");
                     return keyStore.getKey(keyAlias, null);
                 }
             } catch (Exception ex) {
                 logger.error("Error in accessing the Android KeyStore.", ex);
-                return null;
+                throw new IllegalStateException(ex);
             }
         }
     }

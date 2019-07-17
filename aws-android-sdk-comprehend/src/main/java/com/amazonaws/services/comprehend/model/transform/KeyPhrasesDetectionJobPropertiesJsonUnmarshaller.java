@@ -71,6 +71,14 @@ class KeyPhrasesDetectionJobPropertiesJsonUnmarshaller implements
                 keyPhrasesDetectionJobProperties.setDataAccessRoleArn(StringJsonUnmarshaller
                         .getInstance()
                         .unmarshall(context));
+            } else if (name.equals("VolumeKmsKeyId")) {
+                keyPhrasesDetectionJobProperties.setVolumeKmsKeyId(StringJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("VpcConfig")) {
+                keyPhrasesDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
             } else {
                 reader.skipValue();
             }
